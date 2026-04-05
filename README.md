@@ -35,6 +35,16 @@ React frontend for the Order App — a simple e-commerce/order management interf
 
 	Open http://localhost:3000 in your browser.
 
+### Clone the repository (optional)
+
+If you haven't already cloned this repository, run:
+
+```bash
+git clone https://github.com/poonamsweet/order-frontend.git
+cd order-frontend
+```
+
+
 ## Available Scripts
 
 - `npm start` — Run the dev server (hot reload).
