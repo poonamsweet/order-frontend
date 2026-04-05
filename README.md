@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Order App — Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React frontend for the Order App — a simple e-commerce/order management interface used for browsing products, adding items to a cart, placing orders, and viewing order history.
+
+## Features
+
+- User authentication (Register / Login)
+- Browse products and add to cart
+- View and edit cart, remove items
+- Place orders and view order history
+- Role-based UI (customer / delivery / admin)
+
+## Prerequisites
+
+- Node.js (v16+) and npm
+- Backend API running (see project owner for details)
+
+## Setup
+
+1. Install dependencies:
+
+	npm install
+
+2. Configure environment (optional):
+
+	- Create a `.env` file in the project root to override the API base URL if needed:
+
+	  REACT_APP_API_BASE_URL=http://localhost:8000/api/
+
+	The frontend uses `src/services/api.js` to read `REACT_APP_API_BASE_URL` (fallbacks to the default configured in the service file).
+
+3. Start the development server:
+
+	npm start
+
+	Open http://localhost:3000 in your browser.
 
 ## Available Scripts
 
-In the project directory, you can run:
+- `npm start` — Run the dev server (hot reload).
+- `npm run build` — Build production bundle into `build/`.
+- `npm test` — Run tests (if present).
 
-### `npm start`
+## Project Structure (important files)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- `src/pages/` — Page components (Products, Cart, Orders, Register, Login, Dashboard)
+- `src/components/` — Shared UI components (Navbar, etc.)
+- `src/services/api.js` — Axios instance and API helpers
+- `public/` — Static assets and `index.html`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Styling
 
-### `npm test`
+This project uses a mix of simple CSS and inline styles. You can find global styles in `src/App.css` and per-page styles inside their respective components.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Notes
 
-### `npm run build`
+- Cart contents are stored in `localStorage` for unauthenticated flows. When placing an order the frontend calls the backend `orders/` endpoint.
+- If you see CORS or network issues while connecting to the backend, confirm `REACT_APP_API_BASE_URL` and backend CORS settings.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Contributing
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Contributions are welcome. Open an issue or submit a pull request with a clear description of changes.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## License
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This repository does not include a license file. Add a license if you plan to publish this project.
